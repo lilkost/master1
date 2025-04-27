@@ -67,3 +67,52 @@ export const busketFn = () => {
         }
     });
 }
+
+export const sliderBtnToPage = () => {
+    const buttons = document.querySelectorAll(".slider-all-link");
+
+    buttons.forEach(btn=> {
+        btn.addEventListener("click", ()=>{
+            let attrCount = Number(btn.getAttribute("data-count"));
+            const attrLink = btn.getAttribute("data-link").trim();
+
+            if(attrCount === 2) {
+                window.location.href = attrLink
+            }else {
+                attrCount+=1;
+
+                btn.setAttribute("data-count", attrCount);
+            }
+        });
+    });
+}
+
+export const mobileMenuButtonFn = () => {
+    const mobButtons = document.querySelectorAll(".mobile-menu__item");
+    const parent = document.querySelector(".mobile-menu__old-page");
+    const oldPage = document.querySelector(".mobile-menu__old-page");
+
+    if(!mobButtons) return;
+
+    let btnOpenOldPage;
+
+    mobButtons.forEach(btn=>{
+        const attrBtn = String(btn.getAttribute("data-btn-open")).trim();
+
+        if(attrBtn === "old-page") btnOpenOldPage = btn;
+    });
+
+    if (btnOpenOldPage instanceof Node && oldPage) {
+        btnOpenOldPage.addEventListener("click", ()=>{
+            oldPage.classList.add("is-open");
+            btnOpenOldPage.classList.add("is-active");
+        });
+        
+        const btnClose = oldPage.querySelector(".mobile-menu__old-page-btn");
+
+        btnClose.addEventListener("click", ()=>{
+            oldPage.classList.remove("is-open");
+            btnOpenOldPage.classList.remove("is-active");
+        });
+    }
+}

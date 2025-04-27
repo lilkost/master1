@@ -9,11 +9,20 @@ export const textResize = () => {
             const textDesktop = String(node.getAttribute("data-desk-text"));
             const textMobile = String(node.getAttribute("data-mob-text"));
 
-            if(window.innerWidth <= 568) {
-                node.innerHTML = textMobile
-            }
-            if(window.innerWidth > 568) {
-                node.innerHTML = textDesktop
+            if(node.classList.contains('btn-size')) {
+                if(window.innerWidth <= 768) {
+                    node.innerHTML = textMobile
+                }
+                if(window.innerWidth > 768) {
+                    node.innerHTML = textDesktop
+                }
+            }else{
+                if(window.innerWidth <= 568) {
+                    node.innerHTML = textMobile
+                }
+                if(window.innerWidth > 568) {
+                    node.innerHTML = textDesktop
+                }
             }
         })
     }

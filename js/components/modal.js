@@ -29,7 +29,25 @@ const modal = () => {
             document.querySelector(".filter-modal"),
             document.querySelector('.filter-modal__close-btn'),
             "is-open"
-        ]  
+        ],
+        [
+            document.querySelectorAll('.one-click-btn'), 
+            document.querySelector(".modal-one-click "), 
+            document.querySelector(".modal-one-click__close"), 
+            "is-open",
+        ],
+        [
+            document.querySelectorAll('.quest-click-btn'), 
+            document.querySelector(".modal-quest-click"), 
+            document.querySelector(".modal-quest-click__close"), 
+            "is-open",
+        ],
+        [
+            document.querySelectorAll('.lot-modal-btn'), 
+            document.querySelector(".modal-lot"), 
+            document.querySelector(".modal-lot__close"), 
+            "is-open",
+        ],
     ];
 
     // функция открытия модального окна
