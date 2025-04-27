@@ -6559,6 +6559,7 @@ body:has(.news__content) .filter{
     margin-inline: auto;
     left: 50%;
     transform: translateX(-50%);
+    height: 57px;
 }
 
 .mobile-menu__list{

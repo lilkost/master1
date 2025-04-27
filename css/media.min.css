@@ -4782,4 +4782,9 @@
     .lot-modal .auth-form__btn{
         margin-bottom: 0;
     }
+    .order-a__element .card__buttons-time {
+        position: absolute;
+        top: 65px;
+        left: 21px;
+    }
 }
