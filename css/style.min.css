@@ -6559,10 +6559,11 @@ body:has(.news__content) .filter{
     margin-inline: auto;
     left: 50%;
     transform: translateX(-50%);
-    height: 57px;
+    pointer-events: none;
 }
 
 .mobile-menu__list{
+    pointer-events: all;
     width: 320px;
     margin-inline: auto;
     display: grid;
@@ -6624,6 +6625,7 @@ body:has(.news__content) .filter{
 }
 
 .mobile-menu__old-page{
+    pointer-events: all;
     max-width: 203px;
     padding: 15px 11px 26px 15px;
     border-radius: 8px;
@@ -6678,4 +6680,9 @@ body:has(.news__content) .filter{
 }
 .mobile-menu__old-page-box:not(:last-child) {
     margin-bottom: 15px;
+}
+
+.mobile-menu.is-hidden {
+    bottom: -100vh;
+    opacity: 0;
 }

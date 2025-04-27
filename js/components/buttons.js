@@ -91,6 +91,7 @@ export const mobileMenuButtonFn = () => {
     const mobButtons = document.querySelectorAll(".mobile-menu__item");
     const parent = document.querySelector(".mobile-menu__old-page");
     const oldPage = document.querySelector(".mobile-menu__old-page");
+    const p = document.querySelector(".mobile-menu");
 
     if(!mobButtons) return;
 
@@ -113,6 +114,23 @@ export const mobileMenuButtonFn = () => {
         btnClose.addEventListener("click", ()=>{
             oldPage.classList.remove("is-open");
             btnOpenOldPage.classList.remove("is-active");
+        });
+
+        const button = p;
+        const footer = document.querySelector('.footer');
+        
+        window.addEventListener('scroll', () => {
+            const footerRect = footer.getBoundingClientRect();
+            const buttonRect = parent.getBoundingClientRect();
+        
+            // Проверяем, достиг ли пользователь футера
+            if (footerRect.top <= window.innerHeight && footerRect.bottom >= 0) {
+                // Если футер виден, скрываем кнопку
+                button.classList.add("is-hidden");
+            } else {
+                // Если футер не виден, показываем кнопку
+                button.classList.remove("is-hidden");
+            }
         });
     }
 }
