@@ -210,7 +210,7 @@ export const cardSlider = () => {
 
     // Обновляем видимость кнопок при изменении слайда
     swiper2.on('slideChange', updateButtonVisibility);
-    }
+    });
 }
 export const cardSlider2 = () => {
     if(!document.querySelector(".card-item__slider-min") || !document.querySelector(".card-item__slider-big")) return
