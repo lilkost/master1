@@ -113,6 +113,7 @@ export const mainsSlider = () => {
 }
 
 export const cardSlider = () => {
+    window.addEventListener("DOMContentLoaded", ()=> {
     if(!document.querySelector(".card-item__slider-min") || !document.querySelector(".card-item__slider-big")) return
     const swiper = new Swiper(".card-item__slider-min", {
         loop: true,
@@ -209,6 +210,7 @@ export const cardSlider = () => {
 
     // Обновляем видимость кнопок при изменении слайда
     swiper2.on('slideChange', updateButtonVisibility);
+    }
 }
 export const cardSlider2 = () => {
     if(!document.querySelector(".card-item__slider-min") || !document.querySelector(".card-item__slider-big")) return
