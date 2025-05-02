@@ -325,9 +325,9 @@ export const cardExamples = () => {
             loop: true,
             slidesPerView: 4,
             spaceBetween: 8,
-            slideToClickedSlide: true,
             freeMode: true,
             watchSlidesProgress: true,
+            slideToClickedSlide: false,
             navigation: {
                 nextEl: mainSlider.querySelector('.card-examples__slider-big_next'),
                 prevEl: mainSlider.querySelector('.card-examples__slider-big_prev'),
@@ -337,5 +337,9 @@ export const cardExamples = () => {
         // Связываем слайдеры
         mainSwiper.controller.control = thumbsSwiper;
         thumbsSwiper.controller.control = mainSwiper;
+
+        thumbsSwiper.on('click', function (swiper, event) {
+            event.stopPropagation(); // Останавливаем всплытие события
+        });
     });
 }
