@@ -4888,6 +4888,15 @@
         width: 25px;
         height: 25px;
     }
+    .mobile-menu__link svg {
+        width: 30px;
+        height: 30px;
+    }
+    .new__btn-like::before{
+        top: 11px;
+        width: 22px;
+        height: 25px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -4915,7 +4924,7 @@
     .mobile-menu__item span{
         font-family: Montserrat;
         font-weight: 500;
-        font-size: 6px;
+        font-size: 7px;
         line-height: 100%;
         letter-spacing: 0%;
         text-align: center;
