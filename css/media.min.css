@@ -412,9 +412,9 @@
         max-width: 237px;
         padding: 15.5px;
     }
-    .top__inner{
+    /* .top__inner{
         margin-bottom: 0;
-    }
+    } */
 }
 @media (max-width: 1366px) and (min-width: 992px) {
     .order__element-info-title,
@@ -1002,6 +1002,9 @@
     .mobile-menu{
         bottom:10px;
         opacity: 1;
+    }
+    .top{
+        min-height: 800px;
     }
 }
 @media(max-width: 768px) {
@@ -4895,6 +4898,33 @@
     .new__btn-like::before{
         top: 11px;
         width: 22px;
+        height: 25px;
+    }
+    .profile__title{
+        font-size: 10px;
+    }
+    .profile__sub-title{
+        font-size: 8px;
+    }
+    .profile__image {
+        width: 38px !important;
+        height: 38px !important;
+    }
+    .main-slider .swiper-slide .card .card__buttons {
+        top: 55px;
+    }
+    .card__btn-favorites {
+        width: 25px;
+        height: 25px;
+    }
+
+    .card__btn-favorites svg,
+    .card__btn-favorites.btn-favorites::before {
+        width: 14px;
+        height: 14px;
+    }
+    .card__buttons-time svg{
+        width: 25px;
         height: 25px;
     }
 }
