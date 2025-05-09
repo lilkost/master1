@@ -2515,6 +2515,11 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
     .mobile-menu__item:active{
         background: var(--main-color);
     }
+    .card__buttons-time:active::before{
+        opacity: 1;
+        left: 15px;
+        pointer-events: all;
+    }
 }
 
 .main {
@@ -4488,7 +4493,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
     background-repeat:no-repeat;
     background-size: contain;
     position:absolute;
-    top: 7px;
+    top: 9px;
     left:7px;
     opacity:0;
     -webkit-transition:opacity var(--transition);
