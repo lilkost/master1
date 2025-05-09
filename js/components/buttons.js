@@ -32,6 +32,14 @@ export const buttonsClickFn = () => {
             })
         }
     })
+
+    if(document.querySelector(".card__buttons-time")) {
+        document.querySelectorAll(".card__buttons-time").forEach(btn=>{
+            btn.addEventListener("click", ()=>{
+                btn.classList.toggle("is-show");
+            })
+        })
+    }
 }
 
 export const busketFn = () => {

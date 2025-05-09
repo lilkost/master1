@@ -1006,6 +1006,11 @@
     .top{
         min-height: 800px;
     }
+    .card__buttons-time.is-show::before{
+        opacity: 1;
+        left: 15px;
+        pointer-events: all;
+    }
 }
 @media(max-width: 768px) {
 
@@ -4933,6 +4938,9 @@
     .card-item__favorites-btn::before {
 
         left:4px
+    }
+    .card__buttons-time::before{
+        padding-inline: 20px 10px;
     }
 }
 

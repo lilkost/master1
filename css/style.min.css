@@ -2515,12 +2515,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
     .mobile-menu__item:active{
         background: var(--main-color);
     }
-    .card__buttons-time:active::before,
-    .card__buttons-time:focus::before{
-        opacity: 1;
-        left: 15px;
-        pointer-events: all;
-    }
+
 }
 
 .main {
