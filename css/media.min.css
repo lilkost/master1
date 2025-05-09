@@ -1748,7 +1748,7 @@
         width:16px;
         height:16px;
         top:4px;
-        left:4px
+        left:5px
     }
     .card-item__definition-title {
         font-weight:700;
@@ -4929,6 +4929,11 @@
     }
     .card__buttons-time::before {
         max-height: 25px;
+    }
+    .card-item__favorites-btn::before {
+
+        left:4px
+    }
 }
 
 @media (max-width: 400px) {
