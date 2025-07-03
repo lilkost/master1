@@ -1,4 +1,4 @@
-const modal = () => {
+export  const modal = () => {
     // массив всех модалок на странице
     // 1. Кнопка/Кнопки открытия
     // 2. Модальное окно
@@ -105,4 +105,56 @@ const modal = () => {
     node.forEach(arr=> changeStateModal(arr, true));
 }
 
-export default modal;
+export const modalSearch = () => {
+    // добавить в мобилке
+    const inputSearch = document.querySelector(".header__form-input");
+    const modalBackPage = document.querySelector(".back-page");
+    const modalResult = document.querySelector(".result-search-modal");
+    const header = document.querySelector(".header");
+    const mobileMenu = document.querySelector(".mobile-menu");
+
+    if(!inputSearch && !modalBackPage && !header) return;
+
+    function modalChangeStateOpen () {
+        const val = inputSearch.value.length;
+        header.classList.add("is-modal-open");
+
+        if(val === 0) {
+            modalBackPage.classList.add("is-open");
+            header.classList.add("is-modal-open")
+            modalResult.classList.remove("is-open");
+            mobileMenu.classList.add("is-modal-open")
+            document.querySelector("[data-btn-open='old-page']").classList.add("is-active");
+        } else {
+            modalResult.classList.add("is-open");
+            document.querySelector("[data-btn-open='old-page']").classList.remove("is-active");
+        }
+    }
+
+    function closeModal() {
+        modalBackPage.classList.remove("is-open");
+        modalResult.classList.remove("is-open");
+        header.classList.remove("is-modal-open");
+
+        document.querySelector("[data-btn-open='old-page']").classList.remove("is-active");
+        document.querySelector(".mobile-menu").classList.remove("is-modal-open")
+        mobileMenu.classList.remove("is-modal-open")
+    }
+
+    // Обработчик события фокуса
+    inputSearch.addEventListener('focus',()=> modalChangeStateOpen());
+    // Обработчик события потери фокуса
+    inputSearch.addEventListener('blur', ()=>modalChangeStateOpen());
+     // Обработчик события ввода текста
+    inputSearch.addEventListener('input', ()=>modalChangeStateOpen());
+
+    // функционал закрытия всех окон
+    const buttonsCloseModal = [
+        document.querySelector(".back-page__close-btn"),
+        document.querySelector(".result-search-modal__button")
+    ];
+
+    buttonsCloseModal.forEach(btn=>{
+        btn.addEventListener("click", ()=>closeModal());
+    })
+}

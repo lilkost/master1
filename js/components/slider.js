@@ -102,8 +102,75 @@ export const mainsSlider = () => {
             sl.on('slideChange', function () {
                 let val = sl.activeIndex;
                 const btn = slider.querySelector(".slider-all-link");
+                console.log(val);
 
                 if(val === 5) {
+                    btn.disabled = false;
+                    console.log(123)
+                }
+            });
+        });
+    })
+}
+
+export const resultModalSlier = () => {
+    window.addEventListener("DOMContentLoaded", ()=> {
+        const sliders = document.querySelectorAll(".result-search-modal__slider");
+
+        if(sliders.length === 0) return;
+    
+        sliders.forEach(slider=>{
+            const parentSlider = slider.closest(".result-search-modal__box")
+            const arrowPrev = parentSlider.querySelector(".main-slider__arrow_prev");
+            const arrowNext = parentSlider.querySelector(".main-slider__arrow_next");
+
+            const sl = new Swiper(slider, {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: false,
+                slidesPerView: 4,
+                slidesPerGroup: 4,
+                spaceBetween: 17,
+    
+                // Navigation arrows
+                navigation: {
+                  nextEl: arrowNext,
+                  prevEl: arrowPrev,
+                },
+                breakpoints: {
+                    1367:{
+                        slidesPerView: 4,
+                        slidesPerGroup: 4,
+                        spaceBetween: 17,
+                    },
+                    993:{
+                        slidesPerView: 4,
+                        slidesPerGroup: 4,
+                        spaceBetween: 21,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        slidesPerGroup: 4,
+                        spaceBetween: 21,
+                    },
+                    320: {
+                        slidesPerView: 2,
+                        slidesPerGroup: 2,
+                        spaceBetween: 10,
+                    }
+                }
+            });
+
+            // Обработчик события смены слайда
+            sl.on('slideChangeTransitionEnd', function () {
+                arrowPrev.classList.add("is-visible")
+            });
+            sl.on('slideChange', function () {
+                let val = sl.activeIndex;
+                const btn = slider.querySelector(".slider-all-link");
+                console.log(val);
+
+                if(val === 4) {
                     btn.disabled = false;
                     console.log(123)
                 }

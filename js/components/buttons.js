@@ -88,18 +88,25 @@ export const sliderBtnToPage = () => {
                 window.location.href = attrLink
             }else {
                 attrCount+=1;
-
                 btn.setAttribute("data-count", attrCount);
             }
         });
+        const parent = btn.closest(".main-slider__arrows");
+        const btnPrev = parent.querySelector(".main-slider__arrow_prev");
+        
+        btnPrev.addEventListener("click", ()=> {
+            btn.setAttribute("data-count", 1);
+        })
     });
 }
 
 export const mobileMenuButtonFn = () => {
     const mobButtons = document.querySelectorAll(".mobile-menu__item");
-    const parent = document.querySelector(".mobile-menu__old-page");
-    const oldPage = document.querySelector(".mobile-menu__old-page");
+    const parent = document.querySelector(".back-page");
+    const oldPage = document.querySelector(".back-page");
     const p = document.querySelector(".mobile-menu");
+    const header = document.querySelector(".header");
+    const mobileMenu = document.querySelector(".mobile-menu");
 
     if(!mobButtons) return;
 
@@ -113,15 +120,20 @@ export const mobileMenuButtonFn = () => {
 
     if (btnOpenOldPage instanceof Node && oldPage) {
         btnOpenOldPage.addEventListener("click", ()=>{
+            document.querySelector(".result-search-modal").classList.remove("is-open")
             oldPage.classList.add("is-open");
             btnOpenOldPage.classList.add("is-active");
+            header.classList.add("is-modal-open");
+            mobileMenu.classList.add("is-modal-open")
         });
         
-        const btnClose = oldPage.querySelector(".mobile-menu__old-page-btn");
+        const btnClose = oldPage.querySelector(".back-page__close-btn");
 
         btnClose.addEventListener("click", ()=>{
             oldPage.classList.remove("is-open");
             btnOpenOldPage.classList.remove("is-active");
+            header.classList.remove("is-modal-open")
+            mobileMenu.classList.remove("is-modal-open")
         });
 
         const button = p;
@@ -141,4 +153,25 @@ export const mobileMenuButtonFn = () => {
             }
         });
     }
+}
+
+export const subscribeButton = () => {
+    const buttons = document.querySelectorAll(".btn-subscribe-masster");
+
+    if(!buttons) return;
+
+    buttons.forEach(btn=>{
+        btn.addEventListener("click", ()=> {
+            btn.classList.toggle("is-active");
+            const nodeText = btn.querySelector("span");
+
+            if(!nodeText) return;
+
+            if(btn.classList.contains("is-active")) {
+                nodeText.textContent = btn.getAttribute('data-active-text').trim();
+            } else {
+                nodeText.textContent = btn.getAttribute('data-default-text').trim();
+            }
+        });
+    });
 }

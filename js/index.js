@@ -1,8 +1,8 @@
 import { useDynamicAdapt } from './dynamicAddapt.js'
-import { sliderConstructor, mainsSlider,cardSlider, cardExamples, cardSlider2 } from "./components/slider.js";
-import { buttonsClickFn, busketFn, sliderBtnToPage, mobileMenuButtonFn } from "./components/buttons.js";
+import { sliderConstructor, mainsSlider,resultModalSlier, cardSlider, cardExamples, cardSlider2 } from "./components/slider.js";
+import { buttonsClickFn, busketFn, sliderBtnToPage,mobileMenuButtonFn, subscribeButton } from "./components/buttons.js";
 import { inputMask, inputPasswordFn } from "./components/input.js";
-import modal from "./components/modal.js";
+import { modal, modalSearch} from "./components/modal.js";
 import { textResize } from './components/textResize.js';
 import { headerScroll } from './components/headerScroll.js';
 
@@ -21,6 +21,9 @@ textResize();
 sliderBtnToPage();
 cardSlider2();
 mobileMenuButtonFn();
+subscribeButton();
+modalSearch();
+resultModalSlier();
 
 
 Fancybox.bind('[data-fancybox="video"]');
