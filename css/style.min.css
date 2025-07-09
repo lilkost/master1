@@ -2451,6 +2451,9 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
     display:none
 }
 @media(hover: hover) {
+    .mobile-menu__old-page-box-item:hover svg rect:nth-child(2) {
+        fill: var(--main-color);
+    }
     .result-search-modal__link:hover {
         background-color: #DA552D;
         border: 1px solid #DA552D;
@@ -6931,6 +6934,8 @@ body:has(.news__content) .filter{
     padding: 8px 8px 8px 20px;
 
     transition: background-color 300ms linear, border 300ms linear;
+
+    overflow: hidden;
 }
 
 .result-search-modal__box{
@@ -7067,4 +7072,8 @@ body:has(.news__content) .filter{
 .header .back-page,
 .header .result-search-modal{
     margin-top: 10px;
+}
+
+.mobile-menu__old-page-box-item svg rect:nth-child(2){
+    transition: fill 300ms linear;
 }
