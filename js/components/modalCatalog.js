@@ -140,6 +140,10 @@ export const createModalCatalog = () => {
                 modal.classList.remove("is-open");
                 btnOpen.classList.remove("is-active");
                 document.querySelector(".result-search-modal").classList.add("is-open");
+                
+                catalogCategorySectionsNode.forEach(i=>i.classList.remove("is-open"));
+                catalogCategorySectionsNode[0].classList.add("is-open");
+                modal.classList.remove("is-animate");
             });
         })
     }
