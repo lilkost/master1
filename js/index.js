@@ -5,6 +5,7 @@ import { inputMask, inputPasswordFn } from "./components/input.js";
 import { modal, modalSearch} from "./components/modal.js";
 import { textResize } from './components/textResize.js';
 import { headerScroll } from './components/headerScroll.js';
+import { createModalCatalog } from './components/modalCatalog.js';
 
 useDynamicAdapt()
 sliderConstructor();
@@ -24,7 +25,7 @@ mobileMenuButtonFn();
 subscribeButton();
 modalSearch();
 resultModalSlier();
-
+createModalCatalog();
 
 Fancybox.bind('[data-fancybox="video"]');
 Fancybox.bind("[data-fancybox]");
