@@ -31,9 +31,21 @@ export const createModalCatalog = () => {
         btnOpen.classList.toggle("is-active");
         headerNode.classList.toggle("is-modal-open");
 
-        if(window.innerWidth <= 480) {
+        if (window.innerWidth <= 480) {
             document.querySelector(".mobile-menu").classList.toggle("is-modal-open");
+            document.querySelector(".result-search-modal").classList.remove("is-open");
+            document.querySelector(".back-page").classList.remove("is-open");
+
+            if (!btnOpen.classList.contains("is-active")) {
+                document.querySelector(".header").classList.remove("is-modal-open")
+                document.querySelector(".mobile-menu").classList.remove("is-modal-open");
+            } else {
+                document.querySelector(".header").classList.add("is-modal-open");
+                document.querySelector(".mobile-menu").classList.add("is-modal-open");
+            }
         }
+        document.querySelectorAll(".mobile-menu__item").forEach(i=>i.classList.remove("is-active"))
+
     });
 
     catalogItemsNode.forEach(catItem => {
@@ -127,21 +139,21 @@ export const createModalCatalog = () => {
 
             if (diffX > threshold) {
                 modal.classList.remove("is-animate");
-            } 
+            }
         });
     })
 
     // открытие модального окна с поиском 
-    if(sectionItem) {
-        sectionItem.forEach(item=>{
-            item.addEventListener("click", (e)=>{
-                if(window.innerWidth > 480) return;
+    if (sectionItem) {
+        sectionItem.forEach(item => {
+            item.addEventListener("click", (e) => {
+                if (window.innerWidth > 480) return;
                 e.preventDefault();
                 modal.classList.remove("is-open");
                 btnOpen.classList.remove("is-active");
                 document.querySelector(".result-search-modal").classList.add("is-open");
-                
-                catalogCategorySectionsNode.forEach(i=>i.classList.remove("is-open"));
+
+                catalogCategorySectionsNode.forEach(i => i.classList.remove("is-open"));
                 catalogCategorySectionsNode[0].classList.add("is-open");
                 modal.classList.remove("is-animate");
             });

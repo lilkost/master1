@@ -125,6 +125,13 @@ export const mobileMenuButtonFn = () => {
             btnOpenOldPage.classList.add("is-active");
             header.classList.add("is-modal-open");
             mobileMenu.classList.add("is-modal-open")
+
+            document.querySelector(".modal-catalog").classList.remove("is-open");
+            document.querySelector(".header__cutalog-btn").classList.remove("is-active");
+            
+            document.querySelectorAll(".modal-catalog__section").forEach(i=>i.classList.remove("is-open"));
+            document.querySelectorAll(".modal-catalog__section")[0].classList.add("is-open");
+            document.querySelector(".modal-catalog").classList.remove("is-animate");
         });
         
         const btnClose = oldPage.querySelector(".back-page__close-btn");

@@ -142,6 +142,13 @@ export const modalSearch = () => {
             modalResult.classList.add("is-open");
             document.querySelector("[data-btn-open='old-page']").classList.remove("is-active");
         }
+
+        document.querySelector(".modal-catalog").classList.remove("is-open");
+        document.querySelector(".header__cutalog-btn").classList.remove("is-active");
+        
+        document.querySelectorAll(".modal-catalog__section").forEach(i=>i.classList.remove("is-open"));
+        document.querySelectorAll(".modal-catalog__section")[0].classList.add("is-open");
+        document.querySelector(".modal-catalog").classList.remove("is-animate");
     }
 
     function closeModal() {
@@ -152,6 +159,8 @@ export const modalSearch = () => {
         document.querySelector("[data-btn-open='old-page']").classList.remove("is-active");
         document.querySelector(".mobile-menu").classList.remove("is-modal-open")
         mobileMenu.classList.remove("is-modal-open")
+
+        
     }
 
     // Обработчик события фокуса
