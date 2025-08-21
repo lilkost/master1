@@ -57,6 +57,7 @@ export const createModalCatalog = () => {
             // changeActiveItem("removeAll");
         }); // событие при уводке мыши
         catItem.addEventListener("click", (e) => {
+            if(window.innerWidth <= 992) e.preventDefault();
             const isTouchDevice = !!('ontouchstart' in window || navigator.maxTouchPoints);
             if (isTouchDevice) {
                 setActive(catItem);
@@ -145,10 +146,13 @@ export const createModalCatalog = () => {
 
     // открытие модального окна с поиском 
     if (sectionItem) {
+        console.log(true)
         sectionItem.forEach(item => {
             item.addEventListener("click", (e) => {
+                console.log("click 1")
                 if (window.innerWidth > 480) return;
                 e.preventDefault();
+                console.log("click 2")
                 modal.classList.remove("is-open");
                 btnOpen.classList.remove("is-active");
                 document.querySelector(".result-search-modal").classList.add("is-open");

@@ -3048,6 +3048,9 @@
     .modal-catalog.modal__inner {
         margin-top: 16px;
     }
+    .header__cutalog-btn.is-active .header__cutalog-btn-decor:nth-child(3){
+        bottom: 7px;
+    }
 }
 
 @media(max-width: 740px) {
@@ -6601,6 +6604,9 @@
     }
     .modal-catalog.modal__inner{
         padding-bottom: 80px;
+    }
+    .header__cutalog-btn.is-active .header__cutalog-btn-decor:nth-child(3) {
+        bottom: 5px;
     }
 }
 

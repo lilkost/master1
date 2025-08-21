@@ -8277,9 +8277,14 @@ body:has(.news__content) .filter {
 }
 .header__cutalog-btn.is-active .header__cutalog-btn-decor:nth-child(3) {
     transform: rotate(-45deg);
-    bottom: 5px;
+    bottom: 9px;
 }
-
+.modal-catalog__sections{
+    overflow-y: scroll;
+}
+.modal-catalog__sections::-webkit-scrollbar{
+    display: none;
+}
 @media (pointer: coarse){
     .modal-catalog__item a {
         pointer-events: none;
