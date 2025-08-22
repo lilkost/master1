@@ -8285,6 +8285,10 @@ body:has(.news__content) .filter {
 .modal-catalog__sections::-webkit-scrollbar{
     display: none;
 }
+.mCSB_scrollTools{
+    width: 6px !important;
+}
+
 @media (pointer: coarse){
     .modal-catalog__item a {
         pointer-events: none;
